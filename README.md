@@ -2,6 +2,10 @@
 
 ## Getting Started
 
+Visit the application [online!](https://colorencoder.herokuapp.com).
+
+Or, feel free to download the source code and run it on your own computer:
+
 ```
 $ git clone https://github.com/francistoto/colorencoder
 $ cd colorencoder
