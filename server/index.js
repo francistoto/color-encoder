@@ -72,11 +72,11 @@ if (process.env.NODE_ENV !== 'test') {
     if (err) throw err;
     console.log('Connected to postgres! Getting schemas...');
 
-    // client
-    //   .query('SELECT public, color_encoder FROM information_schema.tables;')
-    //   .on('row', (row) => {
-    //     console.log(JSON.stringify(row));
-    //   });
+    client
+      .query('SELECT * FROM color_encoder;')
+      .on('row', (row) => {
+        console.log(JSON.stringify(row));
+      });
   });
   // app.get('/db', (req, res) => {
   //   pg.connect(process.env.DATABASE_URL, (err, client, done) => {
