@@ -1,3 +1,14 @@
+/*
+  *******************************************************************
+
+  Top-level module that stores much of the state of the application.
+  This is the only component that is referenced by /client/main.js.
+  This makes a single page app that changes look and feel according
+  to the applications current state.
+
+  *******************************************************************
+*/
+
 import React from 'react';
 import { Grid, Row, Col } from 'react-bootstrap';
 
@@ -46,13 +57,13 @@ export default class App extends React.Component {
 
   handleSubmitText() {
     // Add submitted characters to database
-    this.state.textString.split('').forEach(e => Storage.setCharacterFrequency(e));
+    Storage.setCharacterCount(this.state.textString);
 
     // Start the conversion of text to colors
     this.setState({
       colorArray: strToColors(this.state.textString),
       textString: '',
-    }, Storage.getAllCharacterFrequencies);
+    });
   }
 
   render() {

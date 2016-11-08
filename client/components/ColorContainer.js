@@ -1,3 +1,12 @@
+/*
+  *******************************************************************
+
+  A Container Module that encapsulates and manages the position of
+  the Color modules.
+
+  *******************************************************************
+*/
+
 import React from 'react';
 
 import Color from './Color';

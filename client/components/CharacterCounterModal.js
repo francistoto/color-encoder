@@ -1,3 +1,12 @@
+/*
+  *******************************************************************
+
+  A pop-up modal that displays the cumulative count of all characters
+  entered by all users.  References a PostgreSQL database.
+
+  *******************************************************************
+*/
+
 import React from 'react';
 import { Modal, Button } from 'react-bootstrap';
 
@@ -20,7 +29,7 @@ export default class CharacterCounterModal extends React.Component {
 
   handleOpen() {
     // Obtain cumulative, persistent character counts
-    Storage.getAllCharacterFrequencies()
+    Storage.getAllCharacterCounts()
     .then((charObjCount) => {
       this.setState({
         charCount: charObjCount,

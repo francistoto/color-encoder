@@ -1,3 +1,13 @@
+/*
+  *******************************************************************
+
+  Module that iterates through an object and lists the key-value
+  pairs in "key: value" format.  The object passed in contains the
+  cumulative count of all characters entered by all users.
+
+  *******************************************************************
+*/
+
 import React from 'react';
 
 const CharacterCounter = (props) => {

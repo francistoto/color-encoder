@@ -1,25 +1,29 @@
-require(TEST_HELPER) // <--- This must be at the top of every test file.
+require(global.TEST_HELPER); // <--- This must be at the top of every test file.
 
-var request = require('supertest-as-promised');
-var routes = require(__server + '/index.js');
+const request = require('supertest-as-promised');
 
-describe("The Server", function() {
+const routes = require(`${global.__server}/index.js`);
 
-  var app = TestHelper.createApp();
+describe('The Server', () => {
+  const app = global.TestHelper.createApp();
   app.use('/', routes);
   app.testReady();
 
-  it_("serves an example endpoint", function * () {
+  global.it_('serves HTML to the root endpoint', function* anon() {
+    yield request(app)
+    .get('/')
+    .expect(200)
+    .expect((response) => {
+      global.expect(response.res.headers['content-type']).to.equal('text/html; charset=UTF-8');
+    });
+  });
 
-    //
-    // Notice how we're in a generator function (indicated by the the *)
-    // See test/test-helper.js for details of why this works.
-    //
+  global.it_('serves an example endpoint', function* anon() {
     yield request(app)
       .get('/api/tags-example')
       .expect(200)
-      .expect(function(response) {
-        expect(response.body).to.include('node')
+      .expect((response) => {
+        global.expect(response.body).to.include('node');
       });
   });
 });

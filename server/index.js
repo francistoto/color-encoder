@@ -7,9 +7,7 @@ const db = require('./db.js');
 
 const routes = express.Router();
 
-//
 // Provide a browserified file at a specified path
-//
 routes.get('/app-bundle.js',
   browserify('./client/main.js', {
     // Bundles all client-side es6, JSX, and CSS/SCSS/SASS
@@ -17,16 +15,12 @@ routes.get('/app-bundle.js',
   })
 );
 
-//
 // Example endpoint (also tested in test/server/index_test.js)
-//
 routes.get('/api/tags-example', (req, res) => {
   res.send(['node', 'express', 'browserify', 'mithril']);
 });
 
-//
 // Static assets (html, etc.)
-//
 const assetFolder = Path.resolve(__dirname, '../client/public');
 routes.use(express.static(assetFolder));
 
@@ -45,19 +39,15 @@ routes.post('/api/char_count', (req, res) => {
 });
 
 if (process.env.NODE_ENV !== 'test') {
-  //
   // The Catch-all Route
   // This is for supporting browser history pushstate.
   // NOTE: Make sure this route is always LAST.
-  //
   routes.get('/*', (req, res) => {
     res.sendFile(`${assetFolder}/index.html`);
   });
 
-  //
   // We're in development or production mode;
   // create and run a real server.
-  //
   const app = express();
 
   // Parse incoming request bodies as JSON

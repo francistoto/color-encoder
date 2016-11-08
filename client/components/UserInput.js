@@ -1,3 +1,14 @@
+/*
+  *******************************************************************
+
+  Module that handles user input.  Text is entered into a form and
+  the text value is passed to the App module upon submit.  This
+  module also controls the position of the CharacterCounterModal
+  button.
+
+  *******************************************************************
+*/
+
 import React from 'react';
 import { FormControl, Button, InputGroup, Grid, Row, Col } from 'react-bootstrap';
 

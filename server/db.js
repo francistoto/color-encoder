@@ -1,13 +1,14 @@
+// Imports configuration file
 const config = require('../knexfile.js');
 
-// const env = process.env.NODE_ENV || 'development';
+// Connects to the Heroku PostgreSQL database
 const knex = require('knex')({
   client: 'pg',
   connection: {
-    host: process.env.DB_HOST, // 'ec2-54-225-246-33.compute-1.amazonaws.com',
-    user: process.env.DB_USER, // 'ugadlepvqhddrm',
-    password: process.env.DB_PASSWORD, // 'u-MAQ1y4g19twhRJfOVtgr4VIR',
-    database: process.env.DB_NAME, // 'd26u7kfh0e6jfl',
+    host: process.env.DB_HOST,
+    user: process.env.DB_USER,
+    password: process.env.DB_PASSWORD,
+    database: process.env.DB_NAME,
     ssl: true
   }
 });
