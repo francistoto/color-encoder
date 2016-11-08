@@ -17,13 +17,4 @@ describe('The Server', () => {
       global.expect(response.res.headers['content-type']).to.equal('text/html; charset=UTF-8');
     });
   });
-
-  global.it_('serves an example endpoint', function* anon() {
-    yield request(app)
-      .get('/api/tags-example')
-      .expect(200)
-      .expect((response) => {
-        global.expect(response.body).to.include('node');
-      });
-  });
 });

@@ -15,11 +15,6 @@ routes.get('/app-bundle.js',
   })
 );
 
-// Example endpoint (also tested in test/server/index_test.js)
-routes.get('/api/tags-example', (req, res) => {
-  res.send(['node', 'express', 'browserify', 'mithril']);
-});
-
 // Static assets (html, etc.)
 const assetFolder = Path.resolve(__dirname, '../client/public');
 routes.use(express.static(assetFolder));
