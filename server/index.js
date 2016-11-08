@@ -2,6 +2,7 @@ const browserify = require('browserify-middleware');
 const express = require('express');
 const Path = require('path');
 const bodyParser = require('body-parser');
+const pg = require('pg');
 
 const db = require('./db.js');
 
@@ -65,6 +66,20 @@ if (process.env.NODE_ENV !== 'test') {
 
   // Mount our main router
   app.use('/', routes);
+
+  app.get('/db', (req, res) => {
+    pg.connect(process.env.DATABASE_URL, (err, client, done) => {
+      client.query('SELECT * FROM test_table', (error, result) => {
+        done();
+        if (err) {
+          console.error(err);
+          res.send(`Error ${err}`);
+        } else {
+          res.render('pages/db', { results: result.rows });
+        }
+      });
+    });
+  });
 
   // Start the server!
   const port = process.env.PORT || 4000;
