@@ -1,7 +1,16 @@
 const config = require('../knexfile.js');
 
-const env = process.env.NODE_ENV || 'development';
-const knex = require('knex')(config[env]);
+// const env = process.env.NODE_ENV || 'development';
+const knex = require('knex')({
+  client: 'pg',
+  connection: {
+    host: 'ec2-54-225-246-33.compute-1.amazonaws.com',
+    user: 'ugadlepvqhddrm',
+    password: 'u-MAQ1y4g19twhRJfOVtgr4VIR',
+    database: 'd26u7kfh0e6jfl',
+    ssl: true
+  }
+});
 
 module.exports = knex;
 

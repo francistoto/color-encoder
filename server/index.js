@@ -67,17 +67,17 @@ if (process.env.NODE_ENV !== 'test') {
   // Mount our main router
   app.use('/', routes);
 
-  pg.defaults.ssl = true;
-  pg.connect(process.env.DATABASE_URL, (err, client) => {
-    if (err) throw err;
-    console.log('Connected to postgres! Getting schemas...');
+  // pg.defaults.ssl = true;
+  // pg.connect(process.env.DATABASE_URL, (err, client) => {
+  //   if (err) throw err;
+  //   console.log('Connected to postgres! Getting schemas...');
 
-    client
-      .query('SELECT * FROM color_encoder;')
-      .on('row', (row) => {
-        console.log(JSON.stringify(row));
-      });
-  });
+  //   client
+  //     .query('SELECT * FROM color_encoder;')
+  //     .on('row', (row) => {
+  //       console.log(JSON.stringify(row));
+  //     });
+  // });
   // app.get('/db', (req, res) => {
   //   pg.connect(process.env.DATABASE_URL, (err, client, done) => {
   //     client.query('SELECT * FROM test_table', (error, result) => {
