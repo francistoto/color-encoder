@@ -4,7 +4,7 @@ const config = require('../knexfile.js');
 const knex = require('knex')({
   client: 'pg',
   connection: {
-    host: 'ec2-54-225-246-33.compute-1.amazonaws.com',
+    host: process.env.DB_HOST, // 'ec2-54-225-246-33.compute-1.amazonaws.com',
     user: process.env.DB_USER, // 'ugadlepvqhddrm',
     password: process.env.DB_PASSWORD, // 'u-MAQ1y4g19twhRJfOVtgr4VIR',
     database: process.env.DATABASE_URL, // 'd26u7kfh0e6jfl',
