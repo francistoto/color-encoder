@@ -1,0 +1,63 @@
+{
+  "name": "colorencoder",
+  "version": "1.0.0",
+  "description": "A web appplication that converts text to color.",
+  "main": "server/index.js",
+  "babel": {
+    "presets": [
+      "es2015",
+      "react"
+    ]
+  },
+  "scripts": {
+    "start": "nodemon server/ --ignore client/",
+    "test_client": "./scripts/test_client.sh",
+    "test_server": "./scripts/test_server.sh",
+    "test": "./scripts/test_client.sh && ./scripts/test_server.sh"
+  },
+  "author": "Francis Toto <frank.b.toto@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "babel-core": "^6.9.1",
+    "babel-preset-es2015": "^6.9.0",
+    "babel-preset-react": "^6.5.0",
+    "babelify": "^7.3.0",
+    "bluebird": "^3.2.2",
+    "body-parser": "^1.14.1",
+    "browserify-middleware": "^7.0.0",
+    "express": "^4.12.4",
+    "isomorphic-fetch": "^2.2.1",
+    "knex": "^0.12.6",
+    "pg": "^6.1.0",
+    "react": "^15.1.0",
+    "react-bootstrap": "^0.30.6",
+    "react-dom": "^15.1.0",
+    "scssify": "^2.1.0",
+    "supertest-as-promised": "^3.1.0"
+  },
+  "devDependencies": {
+    "chai": "^3.4.0",
+    "enzyme": "^2.4.1",
+    "eslint": "^3.9.1",
+    "eslint-config-airbnb": "^13.0.0",
+    "eslint-plugin-import": "^2.2.0",
+    "eslint-plugin-jsx-a11y": "^2.2.3",
+    "eslint-plugin-react": "^6.6.0",
+    "mocha": "^2.3.3",
+    "nodemon": "^1.3.7",
+    "react-addons-test-utils": "^15.3.2",
+    "supertest": "^1.1.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/francistoto/colorencoder"
+  },
+  "keywords": [
+    "browserify",
+    "express"
+  ],
+  "bugs": {
+    "url": "https://github.com/francistoto/colorencoder/issues"
+  },
+  "homepage": "https://github.com/francistoto/colorencoder"
+}
