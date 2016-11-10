@@ -38,7 +38,7 @@ if (process.env.NODE_ENV !== 'test') {
   // This is for supporting browser history pushstate.
   // NOTE: Make sure this route is always LAST.
   routes.get('/*', (req, res) => {
-    res.sendFile(`${assetFolder}/index.html`);
+    res.status(200).sendFile(`${assetFolder}/index.html`);
   });
 
   // We're in development or production mode;

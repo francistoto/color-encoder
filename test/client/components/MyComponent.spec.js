@@ -11,6 +11,6 @@ describe('<App />', () => {
     );
   });
   it('should render the title', () => {
-    expect(wrapper.find('h1').text()).to.equal('The Color Encoder');
+    expect(wrapper.find('h1').text()).to.equal('Hello World!');
   });
 });

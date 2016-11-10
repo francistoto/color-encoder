@@ -5,6 +5,12 @@ module.exports = {
       database: 'color_encoder',
     },
   },
+  test: {
+    client: 'postgresql',
+    connection: {
+      database: 'color_encoder',
+    },
+  },
   production: {
     client: 'pg',
     connection: {
